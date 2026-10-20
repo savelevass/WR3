@@ -85,7 +85,10 @@ function addTodo() {
 function deleteTodo(id) {
     // TODO: Implement this function
     // 1. Remove the todo with the given id from the todos array
+    todos = todos.filter (todo => todo.id !== id);
+
     // 2. Call renderTodos() to update the display
+    renderTodos ();
 }
 
 // TODO: Add a click event listener to the add button that calls addTodo
