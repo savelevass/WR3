@@ -34,8 +34,8 @@ function createTodoElement(todo) {
     });
 
     // 7. Append the span and delete button to the <li>
-    li.appendChild (deleteButton);
     li.appendChild (span);
+    li.appendChild (deleteButton);
 
     // 8. Return the <li> element
     return li;
@@ -62,7 +62,7 @@ function renderTodos() {
 function addTodo() {
     // TODO: Implement this function
     // 1. Get the text from the input field
-    const text = todoInput.value;
+    const text = todoInput.value.trim ();
 
     // 2. If the text is not empty:
     //    a. Create a new todo object with a unique id and the input text
