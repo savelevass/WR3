@@ -1,8 +1,3 @@
-let todos = [
-    {id: 1, text: "Learn JavaScript"},
-    {id: 2, text: "Build a to-do app"},
-    {id: 3, text: "Master DOM manipulation"}
-];
 
 // TODO: Select and store references to the necessary DOM elements:
 // - todoList: the <ul> element to contain the todo items
@@ -67,12 +62,24 @@ function renderTodos() {
 function addTodo() {
     // TODO: Implement this function
     // 1. Get the text from the input field
+    const text = todoInput.value;
+
     // 2. If the text is not empty:
     //    a. Create a new todo object with a unique id and the input text
     //    b. Add the new todo object to the todos array
     //    c. Clear the input field
     //    d. Call renderTodos() to update the display
+    if (text !== "") {
+        const newTodo = {
+            id: Date.now (), text: text
+        };
+        todos.push (newTodo);
+        todoInput.value = "";
+        renderTodos ();
+    }
 }
+
+
 
 // Delete todo
 function deleteTodo(id) {
