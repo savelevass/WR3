@@ -92,9 +92,15 @@ function deleteTodo(id) {
 }
 
 // TODO: Add a click event listener to the add button that calls addTodo
+addButton.addEventListener ("click", addTodo);
 
 // TODO: Add a keypress event listener to the input field 
 // that calls addTodo when the Enter key is pressed
+todoInput.addEventListener ("keypress", (event) => {
+    if (event.key === "Enter") {
+        addTodo ();
+    }
+});
 
 // Initial render
 renderTodos();
