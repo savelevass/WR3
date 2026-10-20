@@ -8,18 +8,41 @@ let todos = [
 // - todoList: the <ul> element to contain the todo items
 // - todoInput: the input field for new todos
 // - addButton: the button to add new todos
+const todoList = document.getElementById ("todo-list")
+const todoInput = document.getElementById ("todo-input")
+const addButton = document.getElementById ("add-button")
+
 
 // Create todo item element
 function createTodoElement(todo) {
     // TODO: Implement this function
     // 1. Create a new <li> element
+    const li = document.createElement ("li");
+
     // 2. Add the 'todo-item' class to the <li>
+    li.classList.add ("todo-item");
+
     // 3. Create a <span> for the todo text
+    const span = document.createElement ("span");
+
     // 4. Set the span's text content to todo.text
+    span.textContent = todo.text;
+
     // 5. Create a delete button
+    const deleteButton = document.createElement ("button");
+    deleteButton.textContent = "Delete";
+
     // 6. Add a click event listener to the delete button that calls deleteTodo(todo.id)
+    deleteButton.addEventListener ("click", ()=> {
+        deleteTodo (todo.id)
+    });
+
     // 7. Append the span and delete button to the <li>
+    li.appendChild (deleteButton);
+    li.appendchild (span);
+
     // 8. Return the <li> element
+    return li;
 }
 
 // Render todos
