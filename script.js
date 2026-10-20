@@ -27,6 +27,7 @@ function createTodoElement(todo) {
     // 5. Create a delete button
     const deleteButton = document.createElement ("button");
     deleteButton.textContent = "Delete";
+    deleteButton.classList.add ("delete-button")
 
     // 6. Add a click event listener to the delete button that calls deleteTodo(todo.id)
     deleteButton.addEventListener ("click", ()=> {
